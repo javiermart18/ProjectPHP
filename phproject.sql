@@ -13,3 +13,6 @@ points_clashes INT NOT NULL,
 total_points INT NOT NULL,
 PRIMARY KEY (user_id)
 );
+
+ALTER TABLE `quiz` ADD CONSTRAINT `fk_id_user_quiz` FOREIGN KEY (`id_user`) REFERENCES `users`(`user_id`)
+ON DELETE CASCADE ON UPDATE CASCADE;
