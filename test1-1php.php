@@ -104,7 +104,7 @@ foreach( $answer5 as $answer5s)
 };
     
     ?>
-    <input type = "submit" value = "To correct"/>
+    <input type = "submit" value = "Get Result"/>
     <a href="start.html"><input type="button" value="Return"></a>
     </form>
        

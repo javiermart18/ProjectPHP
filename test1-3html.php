@@ -42,19 +42,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 ?>
 
-<form action="test1-2php.php" method="post">
+<form action="test1-3html.php" method="post">
     
-    <h1>Test 1.2</h1>
+    <h1>Test 1.1</h1>
 
 <?php
     
- echo "<strong>1- Which of the following method of Exception class returns source filename?</strong>";
+ echo "<strong>1- Where is the content in the box model?</strong>";
  echo "&nbsp;&nbsp;&nbsp;<font color='red'>&nbsp$radioErr</font>";
  
- $answer1=["A) getMessage()",
-           "B) getCode()",
-          "C) getFile()",
-           "D) getLine()"];
+ $answer1=["A) The outside",
+           "B) The left",
+          "C) Center",
+           "D) No where"];
 
 foreach( $answer1 as $answer1s)
 {	   
@@ -62,40 +62,48 @@ foreach( $answer1 as $answer1s)
 };
 
 
-echo "<strong>2- Which of the following magic constant of PHP returns current line number of the file?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio1Err</font>"; 
+echo "<strong>2- Which option will put padding on the left of an object?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio1Err</font>"; 
 
- $answer2=["A) _LINE_","B) _FILE_",
-          "C) _FUNCTION_","D) _CLASS_"];
+ $answer2=["A) padding-top",
+           "B) padding-right",
+          "C) padding-bottom",
+           "D) padding-left"];
 
 foreach( $answer2 as $answer2s)
 {	   
 		echo '<p><input type="radio" name="radio1" value="'.$answer2s.'"> '.$answer2s.'</p>';
 };
 
-echo "<strong>3- Which of the following array represents an array with a numeric index?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio2Err</font>"; 
+echo "<strong>3- What is the shorthand way of putting margin on an object?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio2Err</font>"; 
 
- $answer3=["A) Numeric Array",
-           "B) Associative Array",
-          "C) Multidimentional Array",
-           "D) None of the above"];
+ $answer3=["A) margin-right: 10px; margin-top: 5px;",
+           "B) margin: 5px 10px 0 5px",
+          "C) padding:10px;",
+           "D) margin-left:10px;"];
 
 foreach( $answer3 as $answer3s)
 {	   
 		echo '<p><input type="radio" name="radio2" value="'.$answer3s.'"> '.$answer3s.'</p>';
 };
 
-echo "<strong>4- If there is any problem in loading a file then the include() function generates a warning but the script will continue execution.</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio3Err</font>"; 
+echo "<strong>4- What are all the properties a border needs?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio3Err</font>"; 
 
- $answer4=["A) True","B) False"];
+ $answer4=["A)  border-width",
+           "B) border-style, border-width, border-color",
+          "C) 1px",
+           "D) border-solid"];
 
 foreach( $answer4 as $answer4s)
 {	   
 		echo '<p><input type="radio" name="radio3" value="'.$answer4s.'"> '.$answer4s.'</p>';
 };
 
-echo "<strong>5- Which of the following function is used to get the size of a file?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio4Err</font>"; 
+echo "<strong>5-  If you have a container of 300px all around, which size < p > will fit in the container?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio4Err</font>"; 
 
- $answer5=["A) fopen()","B) fread()","C) filesize()","D) file_exist()"];
+ $answer5=["A) p{ width:250px; height:200px;}",
+           "B) p{width:200px; height:500;}",
+           "C) p{width:301px; height:259px;}",
+           "D) p{ width:500px; height:500px;}"];
 
 foreach( $answer5 as $answer5s)
 {	   
@@ -112,11 +120,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 $totalCorrect = 0;
 
-if ($result1 == "C) getFile()") {$totalCorrect++;}
-if ($result2 == "A) _LINE_") {$totalCorrect++;}
-if ($result3 == "A) Numeric Array") {$totalCorrect++;}
-if ($result4 == "A) True") {$totalCorrect++;}
-if ($result5 == "C) filesize()") { $totalCorrect++;}
+if ($result1 =="C) Center") {$totalCorrect++;}
+if ($result2 =="D) padding-left") {$totalCorrect++;}
+if ($result3 =="B) margin: 5px 10px 0 5px") {$totalCorrect++;}
+if ($result4 =="B) border-style, border-width, border-color") {$totalCorrect++;}
+if ($result5 =="A) p{ width:250px; height:200px;}") { $totalCorrect++;}
 
 echo "<div id='results'><h1>Your score is  $totalCorrect / 5 </h1></div>";
     

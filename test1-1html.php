@@ -42,19 +42,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 ?>
 
-<form action="test1-2php.php" method="post">
+<form action="test1-1html.php" method="post">
     
-    <h1>Test 1.2</h1>
+    <h1>Test 1.1</h1>
 
 <?php
     
- echo "<strong>1- Which of the following method of Exception class returns source filename?</strong>";
+ echo "<strong>1- What does HTML stand for?</strong>";
  echo "&nbsp;&nbsp;&nbsp;<font color='red'>&nbsp$radioErr</font>";
  
- $answer1=["A) getMessage()",
-           "B) getCode()",
-          "C) getFile()",
-           "D) getLine()"];
+ $answer1=["A) Hyper Throttle Manly Language ",
+           "B) Hypertext Markup Language",
+          "C) How to make language ",
+           "D) How to move language "];
 
 foreach( $answer1 as $answer1s)
 {	   
@@ -62,40 +62,48 @@ foreach( $answer1 as $answer1s)
 };
 
 
-echo "<strong>2- Which of the following magic constant of PHP returns current line number of the file?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio1Err</font>"; 
+echo "<strong>2- With a checkbox, you can...</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio1Err</font>"; 
 
- $answer2=["A) _LINE_","B) _FILE_",
-          "C) _FUNCTION_","D) _CLASS_"];
+ $answer2=["A) Select only one option",
+           "B) Select multiple or no options",
+          "C) Type a message",
+           "D) Input a password"];
 
 foreach( $answer2 as $answer2s)
 {	   
 		echo '<p><input type="radio" name="radio1" value="'.$answer2s.'"> '.$answer2s.'</p>';
 };
 
-echo "<strong>3- Which of the following array represents an array with a numeric index?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio2Err</font>"; 
+echo "<strong>3- What is semantic HTML?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio2Err</font>"; 
 
- $answer3=["A) Numeric Array",
-           "B) Associative Array",
-          "C) Multidimentional Array",
-           "D) None of the above"];
+ $answer3=["A) Not marking anything up ",
+           "B) A whole bunch of coding",
+          "C) HTML and CSS)",
+           "D) The way of correctly marking up and defining data"];
 
 foreach( $answer3 as $answer3s)
 {	   
 		echo '<p><input type="radio" name="radio2" value="'.$answer3s.'"> '.$answer3s.'</p>';
 };
 
-echo "<strong>4- If there is any problem in loading a file then the include() function generates a warning but the script will continue execution.</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio3Err</font>"; 
+echo "<strong>4- What does the < div > tag do?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio3Err</font>"; 
 
- $answer4=["A) True","B) False"];
+ $answer4=["A) Divides content",
+           "B) Makes text bold",
+          "C) Makes text bigger",
+           "D) Puts text into a list"];
 
 foreach( $answer4 as $answer4s)
 {	   
 		echo '<p><input type="radio" name="radio3" value="'.$answer4s.'"> '.$answer4s.'</p>';
 };
 
-echo "<strong>5- Which of the following function is used to get the size of a file?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio4Err</font>"; 
+echo "<strong>5- The < p > tag is used for what purpose?</strong>";  echo "<font color='red'>&nbsp;&nbsp;&nbsp;$radio4Err</font>"; 
 
- $answer5=["A) fopen()","B) fread()","C) filesize()","D) file_exist()"];
+ $answer5=["A) To make a list",
+           "B) To write text",
+           "C) To display a heading",
+           "D) It's not used for anything"];
 
 foreach( $answer5 as $answer5s)
 {	   
@@ -112,11 +120,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 $totalCorrect = 0;
 
-if ($result1 == "C) getFile()") {$totalCorrect++;}
-if ($result2 == "A) _LINE_") {$totalCorrect++;}
-if ($result3 == "A) Numeric Array") {$totalCorrect++;}
-if ($result4 == "A) True") {$totalCorrect++;}
-if ($result5 == "C) filesize()") { $totalCorrect++;}
+if ($result1 =="B) Hypertext Markup Language") {$totalCorrect++;}
+if ($result2 =="B) Select multiple or no options") {$totalCorrect++;}
+if ($result3 =="D) The way of correctly marking up and defining data") {$totalCorrect++;}
+if ($result4 =="A) Divides content") {$totalCorrect++;}
+if ($result5 =="B) To write text") { $totalCorrect++;}
 
 echo "<div id='results'><h1>Your score is  $totalCorrect / 5 </h1></div>";
     
