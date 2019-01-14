@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form action="test1-2html.php" method="post">
     
-    <h1>Test 1.1</h1>
+    <h1>Test 1.2</h1>
 
 <?php
     
