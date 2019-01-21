@@ -42,23 +42,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// Make the query:
 		$q = "INSERT INTO users (user_id, username, pass, email, registration_date, total_points) VALUES ('0','$un', SHA1('$p'), '$e', NOW(), '0')";		
 		$r = @mysqli_query ($dbc, $q); // Run the query.
-		if ($r) { // If it ran OK.
-		
-			// Print a message:
-			echo '<h1>Thank you!</h1>
-				 <p>You are now registered</p><br />';	
-
-			// Create a session
-		
+        // Variable $row hold the result of the query
+		$row = mysqli_fetch_assoc($r);
+		if ($r) { // If it ran OK.	
+			header('Location: login.php');
 		} else { // If it did not run OK.
 			
 			// Public message:
 			echo '<h1>System Error</h1>
-			<p class="error">You could not be registered due to a system error. We apologize for any inconvenience.</p>'; 
-			
-			// Debugging message:
-			echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
-						
+			<p class="error">You could not be registered due to a system error. We apologize for any inconvenience.</p>'; 						
 		} // End of if ($r) IF.
 		
 		mysqli_close($dbc); // Close the database connection.
@@ -84,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="loginCSS.css" rel="stylesheet">
+<link href="includes/css/quizsamar.css" rel="stylesheet">
 <style>
     
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -93,15 +85,11 @@ form {border: 3px solid #f1f1f1;}
 </style> 
 </head>
 <body>
-    <div class="container4">
-	<img src="samar.png" height="200px" width="500px"> 
-    </div>
-    <br>
     <div class="container1">
     	<form action="register.php" method="post">
             <center><h2>Sign Up</h2></center>
   		<div class="imgcontainer">
-    	<img src="1.png" alt="Avatar" class="avatar">
+    	<center><img src="includes/images/1.png" alt="Avatar" class="avatar" width="50px" height="50px"></center>
   		</div>
 
   		<div class="container">
@@ -120,11 +108,11 @@ form {border: 3px solid #f1f1f1;}
 			<button type="submit">Sign Up</button>
 
   		</div> 
+
+		<div>
+    		<center><p>If you have not registered in this page, <a href="login.php">click here</a></p></center>
+  		</div>
 		</form>
     </div>
-    
-<div class="footer">
-  <p>© 2019 QuizSaMar, Inc. All rights reserved.</p>
-</div>
 </body>
 </html>
