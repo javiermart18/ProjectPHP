@@ -1,5 +1,5 @@
 <?php
-$page_title = 'Register';
+$page_title = 'Login';
 
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	} else {
 		$un = mysqli_real_escape_string($dbc, trim($_POST['username']));
   }
- 
+
   	// Check for a password:
 	if (empty($_POST['pass'])) {
 		$errors[] = 'You forgot to enter your password.';
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Search the user in the database...
       
       // Make the query:
-      $q = "SELECT username, pass FROM users WHERE username='$un'";	
+      $q = "SELECT user_id, username, pass FROM users WHERE username='$un'";	
       $r = @mysqli_query ($dbc, $q); // Run the query.
 
       // Variable $row hold the result of the query
@@ -40,15 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //Create session
         session_start();
         $_SESSION['loggedin'] = true;
-        //$_SESSION['id'] = $row['user_id'];
-        $_SESSION['uname'] = $row['username'];	
+        $_SESSION['id'] = $row['user_id'];
+        $_SESSION['uname'] = $row['username'];
         header('Location: start.php');
       } else {
-        echo "Wrong arguments";
-        /*
-        echo "<div class='alert alert-danger' role='alert'>Email or Password are incorrects!
-        <p><a href='login.html'><strong>Please try again!</strong></a></p></div>";	
-        */		
+        	// Public message:	
+      header('Location: login.php');
       }	
       mysqli_close($dbc); // Close the database connection.
       
@@ -75,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <link href="loginCSS.css" rel="stylesheet">   
+<link href="includes/css/quizsamar.css" rel="stylesheet">   
 <style>
     
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -83,16 +80,11 @@ form {border: 3px solid #f1f1f1;}
 </style>
 </head>
 <body>
-    <div class="container4">
-    <h2>Welcome to QuizSaMar</h2>
-    </div>
-    <br>
-
     <div class="container1">
         <form action="login.php" method="post">
             <center><h2>Sign in</h2></center>
   <div class="imgcontainer">
-    <img src="images/imglogin.png" alt="Avatar" class="avatar">
+    <center><img src="includes/images/imglogin.png" alt="Avatar" class="avatar" width="50px" height="50px"></center>
   </div>
 
   <div class="container">
@@ -106,15 +98,9 @@ form {border: 3px solid #f1f1f1;}
 
   </div> 
   <div>
-    <p>If you have not registered in this page, <a href="register.php">click here</a></p>
+    <center><p>If you have not registered in this page, <a href="register.php">click here</a></p></center>
   </div>
 </form>
-    </div>
-    
-<div class="footer">
-  <p>© 2019 QuizSaMar, Inc. All rights reserved.</p>
 </div>
-    
-
 </body>
 </html>
