@@ -1,7 +1,10 @@
 <?php
 session_start();
+error_reporting(0);
+// If you are not logged in we will skip an error because do not find the following variable
+// For this reason we used previously error recording
+//It is not advisable to use it, but in this case because we know that there are no errors we use it 
 if ($_SESSION['loggedin']){
-  error_reporting(0);
   $url = array_pop(explode('/', $_SERVER['PHP_SELF']));
   include ('includes/html/header.php');
 ?>
@@ -58,6 +61,8 @@ if ($_SESSION['loggedin']){
     </div>
   </div>
 </div>
-<?php } require("includes/html/footer.html");?>
+<?php  require("includes/html/footer.html");}
+// If you have not logged in you can not access the page
+else{echo "<center><img src='includes/images/samar.png' widht='25%' style='margin-top:10%'><h1 style='margin-top:15%'>Please login before you access this page.<br>To access the login page click <a href='login.php'>here</a><h1></center>";}?>
 </body>
 </html>
